@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.86.0'
+project:
+    name: Testing-New-Final
+    package:
+        name: Testing-New-Final
+        api_version: '61.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/Testing-New-Final/tests
+            options:
+                outputdir: robot/Testing-New-Final/results
+
+    robot_testdoc:
+        options:
+            path: robot/Testing-New-Final/tests
+            output: robot/Testing-New-Final/doc/Testing-New-Final_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
